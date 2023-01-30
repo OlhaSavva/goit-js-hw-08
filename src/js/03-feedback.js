@@ -12,7 +12,6 @@ function handleFormInput(e) {
   feedbackForm[e.target.name] = e.target.value;
   localStorage.setItem(STORAGE_KEY, JSON.stringify(feedbackForm));
 }
-
 if (localStorage.getItem(STORAGE_KEY)) {
   savedMessage = JSON.parse(localStorage.getItem(STORAGE_KEY));
   for (let key in savedMessage) {
@@ -24,7 +23,7 @@ function onFormSubmit(event) {
   event.preventDefault();
   event.currentTarget.reset();
   localStorage.removeItem(STORAGE_KEY);
-  if (savedMessage) {
-    console.log(savedMessage);
+  if (feedbackForm) {
+    console.log(feedbackForm);
   }
 }
